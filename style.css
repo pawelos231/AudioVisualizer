@@ -29,8 +29,11 @@
 #audio1 {
     width: 50%;
     margin: 50px auto;
+    left: 25%;
+    position: absolute;
     color: white;
     display: block;
+    z-index: 10;
 }
 
 #fileupload{
@@ -38,4 +41,13 @@
     top: 150px;
     color: white;
     z-index: 100;
+}
+
+#STOP{
+    width: 200px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 60px;
+    font-size: 25px;
 }
