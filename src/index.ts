@@ -7,7 +7,7 @@ class SoundVisualizer {
   constructor() {
     this.canvas = document.getElementById("canvas1")! as HTMLCanvasElement;
     this.file = document.getElementById("fileupload")! as HTMLInputElement;
-    this.audio = document.getElementById("audio1")! as HTMLAudioElement;
+    this.audio = document.getElementById("audio")! as HTMLAudioElement;
     this.STOP = document.getElementById("STOP")!;
     this.ctx = this.canvas.getContext("2d")!;
     this.canvas.width = window.innerWidth;
@@ -43,7 +43,7 @@ class SoundVisualizer {
       barHeight = dataArray[i] * 1.2;
       const red = (i * barHeight) / 20;
       const blue = barHeight / 2;
-      const green = i * 4;
+      const green = i * 2;
       this.ctx.fillStyle = "rgb(" + red + "," + green + "," + blue + ")";
       this.ctx.fillRect(x, this.canvas.height - barHeight, barWidth, barHeight);
       x += barWidth;
@@ -67,7 +67,7 @@ class SoundVisualizer {
       analyser = audioCtx.createAnalyser();
       audioSource.connect(analyser);
       analyser.connect(audioCtx.destination);
-      analyser.fftSize = 512;
+      analyser.fftSize = 1024;
       const bufferLength = analyser.frequencyBinCount;
       const dataArray = new Uint8Array(bufferLength);
 
